@@ -4,7 +4,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <section class="bg-gray-200 container mx-auto rounded-md my-4">
-    <h1>teste</h1>
+    <h1>teste remote</h1>
   </section>
 </template>
 

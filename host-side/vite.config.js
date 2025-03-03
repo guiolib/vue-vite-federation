@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { federation } from '@module-federation/vite'
-import tailwindcss from '@tailwindcss/postcss'
+import tailwindcss from '@tailwindcss/vite'
 import autoprefixer from 'autoprefixer'
 
 // https://vitejs.dev/config/
@@ -12,6 +12,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    tailwindcss(),
     federation({
       name: 'host-template',
       remotes: {
@@ -26,14 +27,14 @@ export default defineConfig({
       }
     })
   ],
-  css: {
-    postcss: {
-      plugins: [
-        tailwindcss,
-        autoprefixer,
-      ],
-    },
-  },
+  // css: {
+  //   postcss: {
+  //     plugins: [
+  //       tailwindcss,
+  //       autoprefixer,
+  //     ],
+  //   },
+  // },
   build: {
     target: ['chrome100', 'firefox90',],
     rollupOptions: {
